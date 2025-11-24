@@ -1,6 +1,3 @@
-from funcs.ui import Screen
-from funcs.utils import clear_screen, draw_box
-from funcs.startup import check_and_install_packages
 
 #Main function
 def main():
@@ -24,6 +21,9 @@ def main():
         print(f"Error: {e}")
 #Startup init
 if __name__ == "__main__":
+    print("Check1")
+    from funcs.startup import check_and_install_packages
+    check_and_install_packages()
     #Print disclaimer to help users
     print("########################################")
     print("#              DISCLAIMER              #")
@@ -32,9 +32,10 @@ if __name__ == "__main__":
     print("#           RESPECTIVE FOLDERS         #")
     print("########################################")
     try:
-        #Start import Initialization
-        check_and_install_packages()
         #Start main loop
+        print("Starting main Loop")
+        from funcs.ui import Screen
+        from funcs.utils import clear_screen, draw_box
         main()
     except Exception as e:
         print(f"Error: {e}")
